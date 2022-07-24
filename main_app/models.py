@@ -1,5 +1,7 @@
 from django.urls import reverse
 from django.db import models
+from django.contrib.auth.models import User
+
 
 # from django.config import settings
 
@@ -32,9 +34,12 @@ class Keyboard(models.Model):
         choices = CASE_MATERIALS,
         default='ALU'
     )
-
+    
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     def get_absolute_url(self):
         return reverse('index')
+
+    
     
 
 

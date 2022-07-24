@@ -16,10 +16,11 @@ def about(request):
   return render(request, 'about.html')
 
 def keyboards_index(request):
+
   if request.GET.get('Case_Color'):
     featured_filter = request.GET.get('Case_Color')
     keyboards = Keyboard.objects.filter(Case_Color=featured_filter)
-  elif request.GET.get('Case_Color') == '':
+  else:
     keyboards = Keyboard.objects.all()
     
   if request.GET.get('Case_Material'):
@@ -34,6 +35,10 @@ def keyboards_detail(request,keyboard_id):
   keyboard = Keyboard.objects.get(id = keyboard_id)
   return render(request,'keyboards/detail.html', {'keyboard': keyboard})
 
-class CatDelete(DeleteView):
+class KeyboardDelete(DeleteView):
   model = Keyboard
   success_url = '/keyboards/'
+
+class KeyboardUpdate(UpdateView):
+  model = Keyboard
+  fields = '__all__'

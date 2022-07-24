@@ -6,4 +6,5 @@
         <li>Case Material: {{keyboard.get_Case_Material_display}}</li>
         <li>Milk</li>
         <a href="{% url 'keyboards_delete' keyboard.id %}">Delete</a>
+        <a href="{% url 'keyboards_update' keyboard.id %}">Edit</a>
     </ul>

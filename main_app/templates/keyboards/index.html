@@ -2,7 +2,7 @@
 
 {% block content %}
 <h1> List of Keyboards</h1>
-<form action="{% url 'index' %}" method="get">
+<form action="{% url 'keyboards_index' %}" method="get">
     <label for="featured">Case Color</label>
     <select name="Case_Color">
         <option value="" />Show All</option>
@@ -13,7 +13,7 @@
     <input type="submit" name="Case_Color_Filtered" value="Filter" />
 </form> 
 
-<form action="{% url 'index' %}" method="get">
+<form action="{% url 'keyboards_index' %}" method="get">
     <label for="featured">Case Material</label>
     <select name="Case_Material">
         <option value="" />Show All</option>
@@ -24,7 +24,6 @@
     <input type="submit" name="Case_Material_Filtered" value="Filter" />
 </form> 
 {% for keyboard in keyboards %}
-
 
 
 <a href="{% url 'detail' keyboard.id %}">
