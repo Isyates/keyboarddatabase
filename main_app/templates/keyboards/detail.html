@@ -1,10 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+
+
+
 <h1>{{keyboard.name}}</h1>
 <h1>{{keyboard.description}}</h1>
     <h2>Case</h2>
     <ul>
         <li>Case Color: {{keyboard.get_Case_Color_display}}</li>
         <li>Case Material: {{keyboard.get_Case_Material_display}}</li>
-        <li>Milk</li>
+        <li>Created by: {{keyboard.user}}</li>
+        {% if user == keyboard.user %}
         <a href="{% url 'keyboards_delete' keyboard.id %}">Delete</a>
         <a href="{% url 'keyboards_update' keyboard.id %}">Edit</a>
+        {% endif%}
     </ul>
+
+    {% endblock %}

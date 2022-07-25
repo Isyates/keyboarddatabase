@@ -1,7 +1,9 @@
 from django.urls import reverse
 from django.db import models
 from django.contrib.auth.models import User
-
+from django.contrib.auth import login
+from django.shortcuts import render, redirect
+from django.contrib.auth.forms import UserCreationForm
 
 # from django.config import settings
 
@@ -35,12 +37,28 @@ class Keyboard(models.Model):
         default='ALU'
     )
     
+    def __str__(self):
+        return self.name
+
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     def get_absolute_url(self):
-        return reverse('index')
+        return reverse('index', kwargs={'keyboard_id': self.id})
 
     
-    
+def signup(request):
+    error_message = ''
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+    if form.is_valid():
+        user = form.save()
+        login(request,user)
+        return redirect('index')
+    else:
+        error_message = "invalid sign-up, please try again."
+    form = UserCreationForm()
+    context = {"form": form, 'error_message': error_message}
+    return render(request, 'registration/signup.html', context)
+
 
 
 

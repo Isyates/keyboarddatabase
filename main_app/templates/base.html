@@ -19,11 +19,13 @@
         <ul class="right">
           <li><a href="/about">About</a></li>
           {% if user.is_authenticated %}
+          <h2><li>Hello {{user}}!</li></h2>
           <li><a href="{% url 'keyboards_create' %}">Create a new Keyboard</a></li>
-          <li><a href="/keyboards/" class="left brand-logo">&nbsp;&nbsp;Show all Keyboards</a></li>
+          <li><a href="/keyboards/" class="left brand-logo">Show all Keyboards</a></li>
           <li><a href="{% url 'logout' %}">Log Out</a></li>
           {% else %}
           <li><a href="{% url 'login' %}">Log In</a></li>
+          <li><a href="{% url 'signup' %}">Signup</a></li>
         {% endif %}
         </ul>
       </div>
