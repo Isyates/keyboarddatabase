@@ -5,6 +5,8 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
 <h1> List of Keyboards</h1>
+
+<!-- form filter for Case Color -->
 <form action="{% url 'keyboards_index' %}" method="get">
     <label for="featured">Case Color</label>
     <select class = 'btn btn-secondary dropdown-toggle'name="Case_Color">
@@ -12,10 +14,16 @@
         <option value="BLA" />Black</option>
         <option value="RED" />Red</option>
         <option value="WHI" />White</option>
-        
+        <option value="BLU" />Blue</option>
+        <option value="GRN" />Green</option>
+        <option value="YLW" />Yellow</option>
+        <option value="PRP" />Purple</option>
+        <option value="ORG" />Orange</option>
+
     <input type="submit" class="btn btn-outline-dark btn-sm" name="Case_Color_Filtered" value="Filter" />
 </form> 
 
+<!-- form filter for Case Material -->
 <form action="{% url 'keyboards_index' %}" method="get">
     <label for="featured">Case Material</label>
     <select class = 'btn btn-secondary  btn-sm dropdown-toggle'name="Case_Material">
@@ -23,9 +31,108 @@
         <option value="PLA" />Plastic</option>
         <option value="POLY" />Polycarbonate</option>
         <option value="ALU" />Aluminum</option>
+        <option value="ACR" />Acrylic</option>
+        <option value="WOOD" />Wood</option>
         
     <input type="submit" class="btn btn-outline-dark btn-sm" name="Case_Material_Filtered" value="Filter" />
 </form> 
+
+<!-- form filter for Case Size -->
+<form action="{% url 'keyboards_index' %}" method="get">
+    <label for="featured">Case Size</label>
+    <select class = 'btn btn-secondary  btn-sm dropdown-toggle'name="Case_Size">
+        <option value="" />Show All</option>
+        <option value="100" />Full Size</option>
+        <option value="80" />TKL</option>
+        <option value="75" />75%</option>
+        <option value="65" />65%</option>
+        <option value="60" />60%</option>
+        <option value="40" />40%</option>
+        
+    <input type="submit" class="btn btn-outline-dark btn-sm" name="Case_Size_Filtered" value="Filter" />
+</form> 
+
+<!-- form filter for Case Layout -->
+<form action="{% url 'keyboards_index' %}" method="get">
+    <label for="featured">Case Layout</label>
+    <select class = 'btn btn-secondary  btn-sm dropdown-toggle'name="Case_Layout">
+        <option value="" />Show All</option>
+        <option value="ANSI" />ANSI</option>
+        <option value="ISO" />Isometric</option>
+        <option value="ORTHO" />Ortholinear</option>
+        
+    <input type="submit" class="btn btn-outline-dark btn-sm" name="Case_Layout_Filtered" value="Filter" />
+</form> 
+
+
+<!-- form filter for Plate Material -->
+<form action="{% url 'keyboards_index' %}" method="get">
+    <label for="featured">Plate Material</label>
+    <select class = 'btn btn-secondary  btn-sm dropdown-toggle'name="Plate_Material">
+        <option value="" />Show All</option>
+        <option value="ALU" />Aluminum</option>
+        <option value="BRS" />Brass</option>
+        <option value="STL" />Steel</option>
+        <option value="CBF" />Carbon Fiber</option>
+
+        
+    <input type="submit" class="btn btn-outline-dark btn-sm" name="Plate_Material_Filtered" value="Filter" />
+</form> 
+
+<!-- form filter for Plate Color -->
+<form action="{% url 'keyboards_index' %}" method="get">
+    <label for="featured">Plate Color</label>
+    <select class = 'btn btn-secondary  btn-sm dropdown-toggle'name="Plate_Color">
+        <option value="" />Show All</option>
+        <option value="BLA" />Black</option>
+        <option value="RED" />Red</option>
+        <option value="WHI" />White</option>
+        <option value="BLU" />Blue</option>
+        <option value="GRN" />Green</option>
+        <option value="YLW" />Yellow</option>
+        <option value="PRP" />Purple</option>
+        <option value="ORG" />Orange</option>
+
+        
+    <input type="submit" class="btn btn-outline-dark btn-sm" name="Plate_Color_Filtered" value="Filter" />
+</form> 
+
+
+<!-- form filter for switches -->
+<form action="{% url 'keyboards_index' %}" method="get">
+    <label for="featured">Switch Style</label>
+    <select class = 'btn btn-secondary  btn-sm dropdown-toggle'name="Switch_Style">
+        <option value="" />Show All</option>
+        <option value="CLI" />Clicky</option>
+        <option value="SIL" />Silent</option>
+        <option value="LIN" />Linear</option>
+        <option value="TAC" />Tactile</option>
+        <option value="OPT" />Optical</option>
+        
+    <input type="submit" class="btn btn-outline-dark btn-sm" name="Switch_Style_Filtered" value="Filter" />
+</form> 
+
+<form action="{% url 'keyboards_index' %}" method="get">
+    <label for="featured">Keycap Color</label>
+    <select class = 'btn btn-secondary  btn-sm dropdown-toggle'name="Keycap_Color">
+        <option value="" />Show All</option>
+        <option value="BLA" />Black</option>
+        <option value="RED" />Red</option>
+        <option value="WHI" />White</option>
+        <option value="BLU" />Blue</option>
+        <option value="GRN" />Green</option>
+        <option value="YLW" />Yellow</option>
+        <option value="PRP" />Purple</option>
+        <option value="ORG" />Orange</option>
+    <input type="submit" class="btn btn-outline-dark btn-sm" name="Keycap_Color_Filtered" value="Filter" />
+</form> 
+
+
+
+
+
+
+
 <div class="row row-cols-6 row-cols-md-0 g-2">
 {% for keyboard in keyboards %}
 

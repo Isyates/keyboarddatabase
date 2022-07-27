@@ -11,13 +11,20 @@ from django.contrib.auth.forms import UserCreationForm
 COLORS = (
     ('BLA','Black'),
     ('RED', "Red"),
-    ('WHI', 'White')
+    ('WHI', 'White'),
+    ('BLU','Blue'),
+    ('GRN', 'Green'),
+    ('YLW','Yellow'),
+    ('PRP', 'Purple'),
+    ('ORG','Orange')
 )
 
 CASE_MATERIALS = (
     ('PLA','Plastic'),
     ('POLY', "Polycarbonate"),
     ('ALU', 'Aluminum'),
+    ('ACR', 'Acrylic'),
+    ('WOOD','Wood')
 )
 
 CASE_SIZE = (
@@ -26,7 +33,7 @@ CASE_SIZE = (
     ('75', '75%'),
     ('65','65%'),
     ('60', "60%"),
-    ('40', '45%'),
+    ('40', '40%'),
 )
 
 CASE_LAYOUT = (
@@ -37,8 +44,9 @@ CASE_LAYOUT = (
 
 PLATE_MATERIAL = (
     ('ALU','Aluminum'),
-    ('BRA', "Brass"),
-    ('ORTHO', 'Ortholinear'),
+    ('BRS', "Brass"),
+    ('STL', 'Steel'),
+    ('CBF','Carbon Fiber')
 )
 
 SWITCH_STYLE = (

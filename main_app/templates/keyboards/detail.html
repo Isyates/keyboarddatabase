@@ -13,6 +13,7 @@
     <ul>
         <li>Case Color: {{keyboard.get_Case_Color_display}}</li>
         <li>Case Material: {{keyboard.get_Case_Material_display}}</li>
+        <li>Plate Color: {{keyboard.get_Plate_Color_display}}</li>
         <li>Created by: {{keyboard.user}}</li>
         {% if user == keyboard.user %}
         <a href="{% url 'keyboards_delete' keyboard.id %}">Delete</a>
