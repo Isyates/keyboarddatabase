@@ -1,38 +1,43 @@
+
 {% extends 'base.html' %}
 
 {% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
 <h1> List of Keyboards</h1>
 <form action="{% url 'keyboards_index' %}" method="get">
     <label for="featured">Case Color</label>
-    <select name="Case_Color">
+    <select class = 'btn btn-secondary dropdown-toggle'name="Case_Color">
         <option value="" />Show All</option>
         <option value="BLA" />Black</option>
         <option value="RED" />Red</option>
         <option value="WHI" />White</option>
         
-    <input type="submit" name="Case_Color_Filtered" value="Filter" />
+    <input type="submit" class="btn btn-outline-dark btn-sm" name="Case_Color_Filtered" value="Filter" />
 </form> 
 
 <form action="{% url 'keyboards_index' %}" method="get">
     <label for="featured">Case Material</label>
-    <select name="Case_Material">
+    <select class = 'btn btn-secondary  btn-sm dropdown-toggle'name="Case_Material">
         <option value="" />Show All</option>
         <option value="PLA" />Plastic</option>
         <option value="POLY" />Polycarbonate</option>
         <option value="ALU" />Aluminum</option>
         
-    <input type="submit" name="Case_Material_Filtered" value="Filter" />
+    <input type="submit" class="btn btn-outline-dark btn-sm" name="Case_Material_Filtered" value="Filter" />
 </form> 
+<div class="row row-cols-6 row-cols-md-0 g-2">
 {% for keyboard in keyboards %}
 
-
-<a href="{% url 'detail' keyboard.id %}">
-    <div class="card">
-        <div class="card-content">
-            <span class="card-title">{{ keyboard.name }}</span>
-        </div>
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{ keyboard.name }}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">By {{keyboard.user}}</h6>
+      <p class="card-text">{{keyboard.description}}</p>
+      <a href="{% url 'detail' keyboard.id %}" class="btn btn-outline-primary">Keyboard Details</a>
     </div>
-  </a>
-  {% endfor %}
+  </div>
 
+  {% endfor %}
+</div>
   {% endblock %}
