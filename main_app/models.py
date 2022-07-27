@@ -20,6 +20,39 @@ CASE_MATERIALS = (
     ('ALU', 'Aluminum'),
 )
 
+CASE_SIZE = (
+    ('100','Full Size'),
+    ('80', "TKL"),
+    ('75', '75%'),
+    ('65','65%'),
+    ('60', "60%"),
+    ('40', '45%'),
+)
+
+CASE_LAYOUT = (
+    ('ANSI','ANSI'),
+    ('ISO', "Isometric"),
+    ('ORTHO', 'Ortholinear'),
+)
+
+PLATE_MATERIAL = (
+    ('ALU','Aluminum'),
+    ('BRA', "Brass"),
+    ('ORTHO', 'Ortholinear'),
+)
+
+SWITCH_STYLE = (
+    ('CLI','Clicky'),
+    ('SIL', "Silent"),
+    ('LIN', 'Linear'),
+    ('TAC', 'Tactile'),
+    ('OPT', 'Optical'),
+)
+
+TRUE_FALSE = (
+    ('TRUE','Yes'),
+    ('FALSE', "No"),
+)
 
 
 class Keyboard(models.Model):
@@ -35,14 +68,78 @@ class Keyboard(models.Model):
         max_length = 20,
         choices = CASE_MATERIALS,
         default='ALU'
-    )
+        )
+    Case_Size = models.CharField(
+        max_length=20,
+        choices = CASE_SIZE,
+        default='100'
+        )
+    
+    Case_Layout = models.CharField(
+        max_length= 20,
+        choices = CASE_LAYOUT,
+        default='ANSI'
+        )
+    Plate_Name = models.CharField(
+        max_length= 20,
+        default = 'Glorious'
+        )
+    Plate_Color = models.CharField(
+        max_length= 20,
+        choices = COLORS,
+        default='BLA'
+        )
+    Plate_Material = models.CharField(
+        max_length= 20,
+        choices = PLATE_MATERIAL,
+        default='ALU'
+        )
+    Switch_Name = models.CharField(
+        max_length= 20,
+        default = 'Cherry MX'
+        )
+    Switch_Color = models.CharField(
+        max_length= 20,
+        choices = COLORS,
+        default='BLA'
+        )
+    Switch_Style = models.CharField(
+        max_length= 20,
+        choices = SWITCH_STYLE,
+        default='LIN'
+        )
+    Switch_RGB = models.CharField(
+        max_length= 20,
+        choices = TRUE_FALSE,
+        default='TRUE'
+        )
+    Keycap_Name = models.CharField(
+        max_length= 20,
+        default = 'GMK'
+        )
+    Keycap_Color = models.CharField(
+        max_length= 20,
+        choices = COLORS,
+        default='BLA'
+        )
+    Keycap_Legend = models.CharField(
+        max_length= 20,
+        choices = TRUE_FALSE,
+        default='TRUE'
+        )
+    Keycap_Shinethrough = models.CharField(
+        max_length= 20,
+        choices = TRUE_FALSE,
+        default='TRUE'
+        )
+
     
     def __str__(self):
         return self.name
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     def get_absolute_url(self):
-        return reverse('index', kwargs={'keyboard_id': self.id})
+        return reverse('keyboards_index')
 
     
 def signup(request):
