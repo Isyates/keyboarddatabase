@@ -26,7 +26,7 @@ def keyboards_index(request):
   if request.GET.get('Case_Color'):
     featured_filter = request.GET.get('Case_Color')
     keyboards = Keyboard.objects.filter(Case_Color=featured_filter)
-  elif request.GET.get('Case_Color') == '':
+  else:
     keyboards = Keyboard.objects.all()
     
 # Case Material Filter 
