@@ -13,8 +13,6 @@ Enter the Custom Keyboard Database. By allowing users to build out their keyboar
 | Live Site    | [Keyboard Database](https://keyboarddatabase-iy90.herokuapp.com/)   |
 | Technologies | Django, Python, Bootstrap                                           |
 | Planning     | [Trello Board](https://trello.com/b/vMPUqw3T/project-4-keyboard-db) |
-|              |                                                                     |
-|              |                                                                     |
 
 
 Entity Relationship Diagram
