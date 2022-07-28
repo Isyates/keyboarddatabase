@@ -15,9 +15,7 @@ Enter the Custom Keyboard Database. By allowing users to build out their keyboar
 | Planning     | [Trello Board](https://trello.com/b/vMPUqw3T/project-4-keyboard-db) |
 |              |                                                                     |
 |              |                                                                     |
-|              |                                                                     |
-|              |                                                                     |
-|              |                                                                     |
+
 
 Entity Relationship Diagram
 
