@@ -21,13 +21,10 @@ Entity Relationship Diagram
 
 
 
-flowchart LR
-  App-->Header
-  App-->Main
-  Main-->Router
-  Router-->List
-  Router-->Create
-  Router-->Edit
-  Router-->Show
-  Router-->About
-  List-->Post
+Index Page Wireframe
+![image](https://user-images.githubusercontent.com/100257983/181400681-11cfee11-6609-4e3a-9048-fcf235f9251e.png)
+
+
+Detail Page Wireframe
+![image](https://user-images.githubusercontent.com/100257983/181400703-f67dea53-a8a6-4000-88fa-bb8c235dde11.png)
+
