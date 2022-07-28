@@ -5,8 +5,7 @@ Computer enthusiasts have a new obsession: Custom keyboards.
 
 Ranging from 100s to 1000s of dollars each, the amount of options to build your own keyboard can feel endless.
 
-Enter the Custom Keyboard Database. By allowing users to build out their keyboard on the web, they can share their latest creations with the rest of the community, and with the capability to only find the keyboard parts you find interesting, a user could find a combination of pieces that works for them.![image](https://user-images.githubusercontent.com/100257983/181398969-8ed1d1d6-c85e-4544-9234-241fe3836a21.png)
-
+Enter the Custom Keyboard Database. By allowing users to build out their keyboard on the web, they can share their latest creations with the rest of the community, and with the capability to only find the keyboard parts you find interesting, a user could find a combination of pieces that works for them.
 
 | Project Name | Keyboard Database                                                   |
 |--------------|---------------------------------------------------------------------|
@@ -19,3 +18,6 @@ Enter the Custom Keyboard Database. By allowing users to build out their keyboar
 |              |                                                                     |
 |              |                                                                     |
 |              |                                                                     |
+
+Entity Relationship Diagram
+<img width="237" alt="image" src="https://user-images.githubusercontent.com/100257983/181399066-8c223721-6f07-4005-8464-04a2a65afaf2.png">
