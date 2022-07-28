@@ -18,6 +18,7 @@ Enter the Custom Keyboard Database. By allowing users to build out their keyboar
 |              |                                                                     |
 |              |                                                                     |
 |              |                                                                     |
+
 Entity Relationship Diagram
 
 <img width="237" alt="image" src="https://user-images.githubusercontent.com/100257983/181399066-8c223721-6f07-4005-8464-04a2a65afaf2.png">
